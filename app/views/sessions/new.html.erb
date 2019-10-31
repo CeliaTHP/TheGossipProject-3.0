@@ -1,0 +1,16 @@
+<center>
+<h1> Créer ta session </h1>
+</center>
+<center>
+<%= form_tag url_for(action: ' create'), method "post" do %>
+<%= label_tag 'e-mail'%>
+<br>
+<%text_field_tag 'email'%>
+<br>
+<%=label_tag 'mdp'%>
+<br>
+<%= text_area_tag 'password' %>
+<br>
+<%= submit_tag "Connexion"%>
+<%end%>
+</center>
