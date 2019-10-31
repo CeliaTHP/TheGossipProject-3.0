@@ -1,0 +1,15 @@
+<center>
+    <%= form_tag url_for(action:'update'), method: "patch" do %>
+
+      <%= label_tag 'Title' %><br>
+      <%= text_field_tag 'title'  %>
+      <br /> <br />
+
+      <%= label_tag 'Content' %><br>
+      <%= text_area_tag 'content' %>
+      <br /> <br />
+
+      <%= submit_tag "Modifier un Gossip" %>
+
+    <% end %>
+</center>

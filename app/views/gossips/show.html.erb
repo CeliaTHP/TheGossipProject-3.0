@@ -1,0 +1,30 @@
+<center>
+<div style="background-color:medium-grey;" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 style="margin-top:40px;" class="display-3"><strong>GOSSIP n °<%= @gossip.find(params[:id]).id %>:</strong> <%= @gossip.find(params[:id]).title%></h1>
+    <h2> Voilà toutes les infos sur le <%= @gossip.find(params[:id]).id %> ème Gossip !</h2>
+  </div>
+</div>
+</center>
+
+
+<div style ="margin-top:40px">
+<center>
+<h2 style=<strong>Titre : </strong><i><%= @gossip.find(params[:id]).title%></i></h2>
+<br>
+<p style=<strong>Contenu :</strong> <%= @gossip.find(params[:id]).content%></p>
+<p style=<strong>Créé le :</strong> <%= @gossip.find(params[:id]).created_at%></p>
+<p style=<strong>Auteur :</strong> <% g = @gossip.find(params[:id]) %> <% h = g.user_id %> <%= @user.find(h).first_name%> <%= @user.find(h).last_name%></p>
+  <a href="<%=edit_gossip_path%>" class="btn btn-outline-dark"> Modifier le gossip </a>
+  <%=form_tag url_for(action:'destroy'), method: "DELETE" do %>
+  <% end %>
+</center>
+</div>
+
+<br>
+
+<center>
+  <a href="<%=author_path(h)%>" class="btn btn-outline-dark">Profil de l'auteur </a>
+  <a href="<%=city_path(@user.find(h).city_id)%>" class="btn btn-outline-dark">Ville de l'auteur </a>
+  <br><br>
+</center>

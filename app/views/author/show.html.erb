@@ -1,0 +1,22 @@
+<center>
+<div style="background-color:medium-grey;" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 style ="margin-top:40px;" class="display-3"><strong>Profil de l'auteur :</strong> <%= @user.first_name %> <%= @user.last_name %></h1>
+    <h2>Voilà toutes les infos sur l'auteur du Gossip n°<%= @gossip.find(params[:id]).id %></h2>
+  </div>
+</div>
+</center>
+
+<center>
+<strong>Prénom : </strong>  <%= @user.first_name%></p>
+<strong>Nom : </strong>  <%= @user.last_name%></p>
+<strong>Description : </strong> <%= @user.description%></p>
+<strong>Mail : </strong>  <%= @user.email%></p>
+<strong>Age : </strong>  <%= @user.age%></p>
+</center>
+
+<br>
+
+<center>
+<a href="<%=city_path(@user.city_id)%>" class="btn btn-outline-dark"> Lien vers la ville du Gossipeur </a>
+</center>

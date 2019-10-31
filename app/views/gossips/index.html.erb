@@ -1,0 +1,30 @@
+<br><br><br>
+<h1 style="text-align:center;">Balance ton Gossip</h1>
+<br>
+<h3 style="text-align:center;"><a class="btn btn-dark" href="/gossips/new">Clique ICI</h3></a>
+<br>
+<p style="text-align:center;"><i>PS: Ferme la porte y'a la pookie dans le sas -Lavoisier</i></p>
+<br>
+<% @gossip.each do |g| %>
+<center>
+  <div class="card" style="width: 18rem; text-align:center;">
+    <img class="card-img-top" src="https://wallpapercave.com/wp/2RQ8Phs.jpg" alt="secret image">
+    <div class="card-body">
+     <a class="card-title"> <%=g.title %> </a>
+      <p class="card-text"> <% a = g.user_id %> De : <%= @user.find(a).first_name %></p>
+      <a class="btn btn-dark" href="http://localhost:3000/gossips/<%=g.id%>">Voir le Gossip !</a>
+    </div>
+<%end%>
+  </div>
+  <br>
+</center>
+
+<div class ="jumbotron jumbotron-fluid">
+<div class ="container">
+<h1 class= "ml11">
+<span class ="text-wrapper">
+<div style = "padding-top: 60px;">
+<>
+</span>
+</span>
+

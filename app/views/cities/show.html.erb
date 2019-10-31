@@ -1,0 +1,36 @@
+<center>
+<div style="background-color:medium-grey;" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3"><strong>La Ville :</strong> <%= @city.name%></h1>
+    <h2>Voilà les infos sur la ville de ton Gossipeur fav</h2>
+  </div>
+</div>
+</center>
+
+<center>
+<strong>Ville : </strong><%= @city.name%></p></strong>
+<strong>Code Postal : </strong><%= @city.zip_code%></p></strong>
+<h3>La légende dit qu'on leurs gossips résonnent encore dans toute la ville...</h3>
+<br>
+</center>
+
+<% c = @user.where(city: @city.id) %>
+<% c.each do |x| %>
+
+</center>
+<center>
+  <div class="card" style="width: 300px; text-align:center;">
+  <img class="card-img-top" src="https://usercontent1.hubstatic.com/14399092_f520.jpg" alt="Card img cap">
+    <div class="card-body">
+      <% g = @gossip.where(user: x.id)%>
+      <% g.each do |x| %>
+      <p class="btn btn-outline-dark" ><%= x.content%></p>
+     <%end%>
+</div>
+</div>
+
+  <a href="<%=author_path(x)%>" class="btn btn-dark">Retourner sur le profil de l'auteur</a>
+<br>
+</center>
+<%end%>
+
