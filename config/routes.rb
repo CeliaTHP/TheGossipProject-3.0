@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   root 'gossips#index'
 
+  get 'dashboard', to: 'dashboard#login'
+
   get 'staticpage/contact', to: 'static_pages#contact'
 
   get 'staticpage/team', to: 'static_pages#team'

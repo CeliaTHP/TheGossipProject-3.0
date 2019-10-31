@@ -1,5 +1,16 @@
 class GossipsController < ApplicationController
 
+
+include SessionsHelper
+before_action :authenticate_user
+
+def authenticate_user
+unless current_user == true
+flash [:danger] = "You must login to create a gossip"
+redirect_to new_session_path
+end
+end
+
   def index
     # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
     @gossip = Gossip.all
